@@ -21,10 +21,23 @@
 
 ## Development
 
-- Initial setup: _If you just generated this project, this step has been done for you._
+- Create a postgres database.
 
   ```sh
-  npm run setup
+  createdb render
+  ```
+
+- Create a `.env` file and modify it to point to the database you just created.
+
+  ```sh
+  cp .env.example .env
+  code .env
+  ```
+
+- Run migrations to initialize the database:
+
+  ```sh
+  npx prisma migrate deploy
   ```
 
 - Start dev server:
